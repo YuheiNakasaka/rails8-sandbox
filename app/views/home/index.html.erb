@@ -1,1 +1,7 @@
 <h1>Home</h1>
+
+<% cache("home_index_time") do %>
+  <p>
+    <%= Time.now %>
+  </p>
+<% end %>

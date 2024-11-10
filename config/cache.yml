@@ -4,8 +4,12 @@ default: &default
     # max_age: <%= 60.days.to_i %>
     max_size: <%= 256.megabytes %>
     namespace: <%= Rails.env %>
+    expiry_batch_size: 1
+    max_age: <%= 30.seconds.to_i %>
+    expiry_method: :job
 
 development:
+  database: cache
   <<: *default
 
 test:
